@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<header>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Saurabh Builds Tech</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- 🔥 HEADER -->
+<header class="header">
+    <div class="logo">
+        <img src="logo.jpeg" alt="Logo">
+        <span>Saurabh Builds</span>
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<!-- 📞 CONTACT SECTION -->
+<section class="section">
+    <h1 class="fade">Contact Me</h1>
+
+    <div class="contact-box fade">
+        <p><b>Email:</b> saurabhpatle169@gmail.com</p>
+        <p><b>Phone:</b> 7820965991 / 9518309356</p>
+
+        <form onsubmit="sendToWhatsApp(); return false;">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <textarea id="message" placeholder="Your Message" required></textarea>
+
+            <button class="btn">Send via WhatsApp</button>
+        </form>
+    </div>
+</section>
+
+<!-- 🔻 FOOTER -->
+<footer>
+    © 2026 saurabhbuilds.tech
+</footer>
+
+<!-- 💬 Floating WhatsApp -->
+<a href="https://wa.me/917820965991" class="whatsapp">💬</a>
+
+<!-- JS -->
+<script src="assets/js/script.js"></script>
+
+<script>
+// WhatsApp Send Function (FIXED ENCODING)
+function sendToWhatsApp(){
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let message = document.getElementById("message").value;
+
+    let text = `Hello Saurabh,
+
+Name: ${name}
+Email: ${email}
+Message: ${message}`;
+
+    let url = "https://wa.me/917820965991?text=" + encodeURIComponent(text);
+
+    window.open(url, '_blank');
+}
+</script>
+
+</body>
+</html>
